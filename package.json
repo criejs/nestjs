@@ -18,12 +18,18 @@
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "jest --config ./test/jest-e2e.json"
+    "test:e2e": "jest --config ./test/jest-e2e.json",
+    "ncc": "ncc build ./dist/main.js -m -C -o dist/ncc",
+    "bytenode": "bytenode -c ./dist/ncc/index.js",
+    "byterun": "bytenode ./dist/ncc/index.jsc"
   },
   "dependencies": {
     "@nestjs/common": "^7.0.0",
     "@nestjs/core": "^7.0.0",
     "@nestjs/platform-express": "^7.0.0",
+    "@zeit/ncc": "^0.22.3",
+    "autocannon": "^7.0.3",
+    "bytenode": "^1.1.7",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^6.5.4"

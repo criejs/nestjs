@@ -73,3 +73,17 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
   Nest is [MIT licensed](LICENSE).
+
+## Protect your nestjs source code
+ncc + bytenode
+
+- After complie using ncc, you need del words like 'ncc' in the file.
+Then run bytenode.
+
+- with PM2, create a file like this.At last run this file using PM2
+```
+require('bytenode');
+require('./index.jsc');
+```
+- Performance. And run bechmark using autocannon , there is no difference in performance.
+even more outstanding.
